@@ -1,0 +1,15 @@
+{
+  "name": "@parrotjs/supports-color",
+  "version": "2.2.0",
+  "description": "a util package that detect whether a terminal supports color",
+  "main": "index.js",
+  "browser": "browser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@parrotjs/has-flag": "^1.2.0"
+  }
+}

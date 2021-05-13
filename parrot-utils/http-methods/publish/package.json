@@ -1,0 +1,13 @@
+{
+    "name": "@parrotjs/http-methods",
+    "version": "1.4.0",
+    "description": "A package can get HTTP methods",
+    "main": "index.js",
+    "browser":"browser.js", 
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }, 
+    "author": "",
+    "license": "ISC"
+  }
+  

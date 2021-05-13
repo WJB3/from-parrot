@@ -1,0 +1,11 @@
+{
+    "name": "@parrotjs/which-type",
+    "version": "1.5.0",
+    "description": "A package can determine variable types", 
+    "main":"index.js", 
+    "scripts": { 
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  

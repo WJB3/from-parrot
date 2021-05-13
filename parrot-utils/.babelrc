@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": false
+      }
+    ]
+  ],
+  "generatorOpts":{
+    "jsescOption":{
+      "minimal":true
+    }
+  }
+}
