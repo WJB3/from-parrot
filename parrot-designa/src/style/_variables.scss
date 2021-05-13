@@ -1,0 +1,76 @@
+$global-prefixCls:'parrot'!default;
+
+$global-default-text-color:rgba(0, 0, 0, 0.87)!default;/** 全局默认文字颜色 */
+
+$global-overlay-color:rgba(0, 0, 0, 0.5)!default;
+
+$global-overlay-lower-zindex:-1!default;
+
+$global-overlay-higher-zindex:2000!default;
+
+$global-overlay-zindex:$global-overlay-lower-zindex!default;
+//----------------------------------------------- Theme Color ---------------------------------------//
+//主要色
+$primary-color:rgba(0, 189, 170, 1) !default;
+$primary-hover-color: darken($primary-color, 5%) !default;
+//次要色
+$minor-color:rgb(126, 51, 202)!default;
+$minor-hover-color:darken($minor-color,5%) !default;
+//警告色
+$warning-color:rgba(248, 180, 0, 1) !default;
+$warning-hover-color:darken($warning-color, 5%) !default;
+//提示色
+$info-color:rgba(7,121,228,1)!default;
+$info-hover-color:darken($info-color,5%)!default;
+//成功色
+$success-color:rgba(107,198,0,1)!default;
+$success-hover-color:darken($success-color,5%)!default;
+//危险色
+$danger-color:rgba(247, 31, 85,1)!default;
+$danger-hover-color:darken($danger-color,5%)!default;
+//默认色
+$default-color:rgba(224,224,224,1);
+$default-hover-color:darken($default-color,5%)!default;
+
+//----------------------------------------------- Font Family -----------------------------------------//
+//主要font-family
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+//备用font-family
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+//----------------------------------------------- Font Size -------------------------------------------//
+$font-size-base:              0.875rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-root:              null !default;
+
+//----------------------------------------------- Font Weight -----------------------------------------//
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+$font-weight-base:            $font-weight-normal !default;
+
+//----------------------------------------------- Line Height ------------------------------------------//
+// 行高
+$line-height-base:            1.5 !default;
+$line-height-lg:              2 !default;
+$line-height-sm:              1.25 !default;
+
+//----------------------------------------------- Title Fontsize ---------------------------------------//
+// 标题大小
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+//----------------------------------------------- ALink ------------------------------------------------//
+// 链接
+$link-color:                              $primary-color !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($primary-color, 20%) !default;
+$link-hover-decoration:                   underline !default;

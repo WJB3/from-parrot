@@ -1,0 +1,26 @@
+@import '../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-Popconfirm';
+$prefixClsIcon:'#{$global-prefixCls}-Icon';
+
+.#{$prefixCls} {
+  
+    &-Message{ 
+
+        display: flex;
+        align-items: center;
+
+        .#{$prefixClsIcon}{
+            color:$warning-color;
+            margin-right:10px;
+        }
+
+    }
+
+    &-Action{
+        margin-top: 1em;
+        display: flex;
+        justify-content: flex-end;
+    }
+     
+}

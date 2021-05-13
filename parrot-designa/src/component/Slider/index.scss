@@ -1,0 +1,254 @@
+@import '../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-Slider';
+$prefixClsRail:'#{$global-prefixCls}-Slider-Rail';
+$prefixClsTrack:'#{$global-prefixCls}-Slider-Track';
+$prefixClsThumb:'#{$global-prefixCls}-Slider-Thumb';
+
+.#{$prefixCls} {
+ 
+
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    /**在进行移动端开发时,由于浏览器自带的滑动行为，很有可能会触发浏览器的垂直滚动*/
+    touch-action: none; 
+    -webkit-tap-highlight-color: transparent;
+
+    &-Primary{
+        color:$primary-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($primary-color,.2);
+            }
+
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($primary-color,.2);
+            }
+
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($primary-color,.2);
+            }
+        } 
+    }
+
+
+    &-Minor{
+        color:$minor-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($minor-color,.2);
+            }
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($minor-color,.2);
+            }
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($minor-color,.2);
+            }
+        } 
+    }
+
+
+    &-Info{
+        color:$info-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($info-color,.2);
+            }
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($info-color,.2);
+            }
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($info-color,.2);
+            }
+        } 
+    }
+
+
+    &-Success{
+        color:$success-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($success-color,.2);
+            }
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($success-color,.2);
+            }
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($success-color,.2);
+            }
+        } 
+    }
+
+    &-Warning{
+        color:$warning-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($warning-color,.2);
+            }
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($warning-color,.2);
+            }
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($warning-color,.2);
+            }
+        } 
+    }
+
+
+    &-Danger{
+        color:$danger-color;
+
+        .#{$prefixCls}-Thumb{
+            &:hover{
+                box-shadow:0px 0px 0px 8px rgba($danger-color,.2);
+            }
+            &.#{$prefixClsThumb}-FocusVisible{
+                box-shadow:0px 0px 0px 8px rgba($danger-color,.2);
+            }
+            &.#{$prefixClsThumb}-Active{
+                box-shadow:0px 0px 0px 14px rgba($danger-color,.2);
+            }
+        } 
+    }
+
+    &-TrackFalse{
+        .#{$prefixClsTrack}{
+            display: none;
+        }
+    }
+
+
+    &-Horizontal{
+        height: 2px;
+        width: 100%;
+        padding:13px 0;
+
+        .#{$prefixClsRail}{
+            height: 2px;
+            width: 100%; 
+        }
+
+        .#{$prefixClsTrack}{
+            height: 2px; 
+        }
+    }
+     
+    &-Vertical{
+        height:100%;
+        width:2px;
+        padding:0 13px;
+
+        .#{$prefixClsRail}{
+            height:100%;
+            width:2px; 
+        }
+
+        .#{$prefixClsTrack}{
+            width: 2px; 
+        }
+
+    }
+
+    &-Rail{
+        display: block;
+        position: absolute; 
+        border-radius: 1px;
+        background-color: currentColor;
+        opacity: 0.38;
+    }
+
+    &-Track{
+        display: block;
+        position:absolute;
+        background-color: currentColor;
+    }
+
+    &-Thumb{ 
+        position:absolute; 
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        outline: 0;
+        background-color: currentColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -5px;
+        margin-left: -6px;
+        transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+
+        &:before{
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+    }
+
+    &-Mark{
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        border-radius: 1px;
+        background-color: currentColor;
+
+        &-MarkActive{
+            opacity: 0.8;
+            background-color: #fff;
+        }
+        
+    }
+
+   
+
+    &-MarkLabel{
+        top: 26px;
+        color: rgba(0, 0, 0, 0.54);
+        position: absolute;
+        font-size: $font-size-base;
+        transform: translateX(-50%); 
+        font-weight: $font-weight-base;
+        line-height: $line-height-base;
+        white-space: nowrap;
+    }
+
+    &-ValueLabel{
+        transform-origin: bottom center;
+        z-index: 1;
+        position: absolute;
+        transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transform: scale(0);
+        top:-44px;
+        
+        &-Open{
+            transform:scale(1);
+        }
+
+        &-Circle{
+            width: 32px;
+            height: 32px;
+            display: flex;
+            transform: rotate(-45deg);
+            align-items: center;
+            border-radius: 50% 50% 50% 0;
+            justify-content: center;
+            background-color: currentColor;
+        }
+
+        &-Label{
+            color: #fff;
+            transform: rotate(45deg);
+            font-size:$font-size-sm;
+        }
+    }
+}

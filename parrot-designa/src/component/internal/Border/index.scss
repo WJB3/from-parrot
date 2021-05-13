@@ -1,0 +1,23 @@
+@import '../../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-Border';
+  
+
+.#{$prefixCls} {
+ 
+    position:relative;
+    height:0;
+    
+    &:after{
+        position:absolute;
+        content:'';
+        display: block;
+        width:100%;
+        background-color: $default-color;
+        height:1px;
+        left:0;
+        right:0;
+
+    }
+     
+}

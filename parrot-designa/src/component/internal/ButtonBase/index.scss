@@ -1,0 +1,71 @@
+@import '../../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-ButtonBase';
+
+$ripple-animation-duration:500ms;
+
+.#{$prefixCls}{  
+
+  
+
+    &-TouchRipple{
+
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:0;
+        overflow:hidden;
+        position:absolute; 
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border-radius: inherit;
+        pointer-events: none;
+
+
+        &-Ripple{
+
+            opacity:0.3;
+            position:absolute;
+            transform: scale(1);
+            animation:ripple-enter $ripple-animation-duration cubic-bezier(0.4, 0, 0.2, 1);
+
+            &-Child{
+                opacity:1;
+                display:block;
+                width:100%;
+                height:100%;
+                border-radius: 50%;
+                background-color: currentColor;
+            }
+            
+            &-ChildLeaving{
+                opacity: 0;
+                animation: ripple-exit $ripple-animation-duration cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            @keyframes ripple-enter {
+                0% {
+                    transform: scale(0);
+                    opacity:0.1;
+                }
+                100%{
+                    transform: scale(1);
+                    opacity:0.3;
+                }
+            }
+
+            @keyframes ripple-exit {
+                0% {
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 0;
+                }
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,22 @@
+@import '../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-Backdrop';
+
+.#{$prefixCls}{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: $global-overlay-color;
+    z-index:$global-overlay-zindex;
+    /** 防止phone上点击会出现一个半透明的灰色背景 */
+    -webkit-tap-highlight-color:transparent;
+
+    &-Center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

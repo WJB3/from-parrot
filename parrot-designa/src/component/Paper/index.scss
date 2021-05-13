@@ -1,0 +1,35 @@
+@import '../../style/index';
+
+$prefixCls:'#{$global-prefixCls}-Paper';
+
+.#{$prefixCls} { 
+     
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    background-color: #fff; 
+
+    color:$global-default-text-color;
+
+    &-Round{
+        border-radius: 4px;
+    }
+
+    &-Circle{
+        border-radius: 50%;
+    }
+
+    &-Transparent{
+        background-color: transparent;
+    }
+
+    &-Inline{
+        display: inline-block;
+    }
+
+    @for $i from 0 through 24 {
+        &-Deep-#{$i} {
+            @include boxShadowLevel($i)
+        }
+    }
+
+}

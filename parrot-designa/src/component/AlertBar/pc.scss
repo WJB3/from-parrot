@@ -1,0 +1,15 @@
+
+@media all and (orientation : landscape){
+    .#{$prefixCls}{
+        padding: 6px 16px; 
+
+        .#{$prefixCls}-Icon{
+            font-size: 1.25rem;
+            margin-right: 12px;
+        }
+
+        &-Message{
+            padding: 8px 0;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "build",//控制编译好的文件输出地址
+        "module": "esnext",//转化成esm格式
+        "target": "ES5",//目标版本
+        "declaration": true,//为每个ts文件生成一个d.ts声明文件
+        "jsx":"react",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,//可以使用ex default
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "src/**/*.test.tsx",
+        "src/**/*.stories.tsx"
+    ]
+}

@@ -1,0 +1,354 @@
+$prefixCls:'#{$global-prefixCls}-Button';
+
+$button-default-min-width:64px;
+$button-small-min-width:58px;
+$button-large-min-width:70px;
+
+@mixin button {
+
+    outline:0;
+    min-width: 64px;
+    text-decoration: none;
+    border:0;
+    text-align: center;
+    white-space: nowrap;
+    text-transform:uppercase; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    cursor: pointer;
+      /** 解决移动端出现蓝色背景色 https://www.cnblogs.com/libin-1/p/5903350.html*/ 
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+@mixin buttonSize($padding-vertical,$padding-horizontal,$font-size:"14px",$min-width:"64px"){//更换size
+    padding:$padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    min-width: $min-width;
+}
+ 
+@mixin button-color-default(){ 
+    color:$global-text-color;
+    background-color: $default-color;
+
+    &:hover{
+        background-color: $default-hover-color;
+    }
+
+    /** 为了移动端导致的粘性效果 https://blog.csdn.net/qq_38354073/article/details/82828080*/
+    @media (hover: none) {
+        &:hover{
+            background-color: $default-color;
+        }
+    } 
+
+}
+
+@mixin button-color-default-outline(){ 
+    color:$global-text-color;
+    border:1px solid darken($default-color,30%);
+
+    &:hover{
+        background-color: lighten($default-color, 4%) ; 
+        border:1px solid darken($default-color,90%);
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+
+}
+
+@mixin button-color-default-text(){ 
+    color:$global-text-color; 
+
+    &:hover{
+        background-color: lighten($default-color, 4%) ;
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+
+}
+
+@mixin button-color-primary(){
+    color:#fff;
+    background-color: $primary-color;
+
+    &:hover{
+        background-color: $primary-hover-color;
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $primary-color;
+        }
+    } 
+
+}
+
+
+@mixin button-color-primary-outline(){
+    color:$primary-color;
+    border:1px solid $primary-color;
+
+    &:hover{
+        background-color: lighten($primary-color, 60%);
+        border-color:darken($primary-color,5%);
+    }  
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+
+@mixin button-color-primary-text(){ 
+    color:$primary-color; 
+
+    &:hover{
+        background-color: lighten($primary-color, 60%) ;
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-danger(){
+    color:#fff;
+    background-color: $danger-color;
+
+    &:hover{
+        background-color: $danger-hover-color;
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $danger-color;
+        }
+    } 
+
+}
+
+@mixin button-color-danger-outline(){
+    color:$danger-color;
+    border:1px solid $danger-color;
+
+    &:hover{
+        background-color: lighten($danger-color, 40%);
+        border-color:darken($danger-color,5%);
+    } 
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-danger-text(){ 
+    color:$danger-color; 
+
+    &:hover{
+        background-color: lighten($danger-color, 60%) ;
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-warning(){
+    color:#fff;
+    background-color: $warning-color;
+
+    &:hover{
+        background-color: $warning-hover-color;
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $warning-color;
+        }
+    } 
+
+}
+
+@mixin button-color-warning-outline(){
+    color:$warning-color;
+    border:1px solid $warning-color;
+
+    &:hover{
+        background-color: lighten($warning-color, 40%);
+        border-color:darken($warning-color,5%);
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+
+}
+
+@mixin button-color-warning-text(){ 
+    color:$warning-color; 
+
+    &:hover{
+        background-color: lighten($warning-color, 40%) ;
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-info(){
+    color:#fff;
+    background-color: $info-color;
+
+    &:hover{
+        background-color: $info-hover-color;
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $info-color;
+        }
+    } 
+
+}
+
+@mixin button-color-info-outline(){
+    color:$info-color;
+    border:1px solid $info-color;
+
+    &:hover{
+        background-color: lighten($info-color, 40%);
+        border-color:darken($info-color,5%);
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-info-text(){ 
+    color:$info-color; 
+
+    &:hover{
+        background-color: lighten($info-color, 40%) ;
+    } 
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-success(){
+    color:#fff;
+    background-color: $success-color;
+
+    &:hover{
+        background-color: $success-hover-color;
+        
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $success-color;
+        }
+    } 
+
+}
+
+@mixin button-color-success-outline(){
+    color:$success-color;
+    border:1px solid $success-color;
+
+    &:hover{
+        background-color: lighten($success-color, 40%);
+        border-color:darken($success-color,5%);
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+
+}
+
+@mixin button-color-success-text(){ 
+    color:$success-color; 
+
+    &:hover{
+        background-color: lighten($success-color, 40%) ;
+    } 
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-minor(){
+    color:#fff;
+    background-color: $minor-color;
+
+    &:hover{
+        background-color: $minor-hover-color;
+    }
+
+    @media (hover: none) {
+        &:hover{
+            background-color: $minor-color;
+        }
+    } 
+
+}
+
+@mixin button-color-minor-outline(){
+    color:$minor-color;
+    border:1px solid $minor-color;
+
+    &:hover{
+        background-color: lighten($minor-color, 40%);
+        border-color:darken($minor-color,5%);
+    } 
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}
+
+@mixin button-color-minor-text(){ 
+    color:$minor-color; 
+
+    &:hover{
+        background-color: lighten($minor-color, 40%) ;
+    } 
+
+    @media (hover: none) {
+        &:hover{
+            background-color: transparent;
+        }
+    } 
+}

@@ -1,0 +1,367 @@
+@import '../../style/index';
+@import './mixin';
+
+.#{$prefixCls}Group{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &-Horizontal{
+        .#{$prefixCls}{
+
+
+            &-IsFirst{
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            &-IsLast{
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+
+            &-Landscape{ 
+                &:not(:last-child){
+                    border-right: 1px solid #bdbdbd;
+                }
+                &.#{$prefixCls}-Primary{
+                    &:not(:last-child){
+                        border-color: darken($primary-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Danger{
+                    &:not(:last-child){
+                        border-color: darken($danger-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Warning{
+                    &:not(:last-child){
+                        border-color: darken($warning-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Info{
+                    &:not(:last-child){
+                        border-color: darken($info-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Success{
+                    &:not(:last-child){
+                        border-color: darken($success-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Minor{
+                    &:not(:last-child){
+                        border-color: darken($minor-color,10%);
+                    }
+                }
+            }
+            &-Outline{ 
+                &:not(:last-child){
+                    border-right-color: transparent;
+
+                    &:hover{
+                        border-right-color: transparent;
+                    }
+                }
+            }
+            &-Text{ 
+                &:not(:last-child){
+                    border-right: 1px solid #bdbdbd;
+                }
+                &.#{$prefixCls}-Primary{
+                    &:not(:last-child){
+                        border-color: $primary-color;
+                    }
+                }
+                &.#{$prefixCls}-Danger{
+                    &:not(:last-child){
+                        border-color: $danger-color;
+                    }
+                }
+                &.#{$prefixCls}-Warning{
+                    &:not(:last-child){
+                        border-color: $warning-color;
+                    }
+                }
+                &.#{$prefixCls}-Info{
+                    &:not(:last-child){
+                        border-color: $info-color;
+                    }
+                }
+                &.#{$prefixCls}-Success{
+                    &:not(:last-child){
+                        border-color: $success-color;
+                    }
+                }
+                &.#{$prefixCls}-Minor{
+                    &:not(:last-child){
+                        border-color: $minor-color;
+                    }
+                }
+            }
+        }
+    } 
+
+    &-Vertical{
+        flex-direction: column;
+        /** 使其侧轴充满 */
+        align-items: stretch;
+
+        .#{$prefixCls}{
+            
+            &-IsFirst{
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+    
+            &-IsLast{
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            &-Landscape{ 
+
+                &:not(:last-child){
+                    border-bottom: 1px solid #bdbdbd;
+                }
+                &.#{$prefixCls}-Primary{
+                    &:not(:last-child){
+                        border-color: darken($primary-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Danger{
+                    &:not(:last-child){
+                        border-color: darken($danger-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Warning{
+                    &:not(:last-child){
+                        border-color: darken($warning-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Info{
+                    &:not(:last-child){
+                        border-color: darken($info-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Success{
+                    &:not(:last-child){
+                        border-color: darken($success-color,10%);
+                    }
+                }
+                &.#{$prefixCls}-Minor{
+                    &:not(:last-child){
+                        border-color: darken($minor-color,10%);
+                    }
+                }
+            }
+            &-Outline{ 
+                &:not(:last-child){
+                    border-bottom-color: transparent;
+
+                    &:hover{
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+            &-Text{ 
+                &:not(:last-child){
+                    border-bottom: 1px solid #bdbdbd;
+                }
+                &.#{$prefixCls}-Primary{
+                    &:not(:last-child){
+                        border-color: $primary-color;
+                    }
+                }
+                &.#{$prefixCls}-Danger{
+                    &:not(:last-child){
+                        border-color: $danger-color;
+                    }
+                }
+                &.#{$prefixCls}-Warning{
+                    &:not(:last-child){
+                        border-color: $warning-color;
+                    }
+                }
+                &.#{$prefixCls}-Info{
+                    &:not(:last-child){
+                        border-color: $info-color;
+                    }
+                }
+                &.#{$prefixCls}-Success{
+                    &:not(:last-child){
+                        border-color: $success-color;
+                    }
+                }
+                &.#{$prefixCls}-Minor{
+                    &:not(:last-child){
+                        border-color: $minor-color;
+                    }
+                }
+            }
+        }
+
+        
+    }
+    
+}
+ 
+.#{$prefixCls}{ 
+
+    @include button(); 
+
+    &-Loading{
+        opacity: .8;
+        cursor:unset;
+    }
+
+    &-Default{
+        @include buttonSize(6px,16px,$font-size-base,$button-default-min-width);
+
+        &.#{$prefixCls}-Circle{
+            padding:0;
+            width:40px;
+            height:40px;
+            min-width: 40px;
+        }
+    }
+
+    &-Small{
+        @include buttonSize(4px,10px,$font-size-sm,$button-small-min-width);
+        &.#{$prefixCls}-Circle{
+            padding:0;
+            width:32px;
+            height:32px;
+            min-width: 32px;
+        }
+    }
+
+    &-Large{
+        @include buttonSize(8px,22px,$font-size-lg,$button-large-min-width);
+        &.#{$prefixCls}-Circle{
+            padding:0;
+            width:48px;
+            height:48px;
+            min-width: 48px;
+        }
+    }
+
+    &-Landscape{  
+
+        &:hover{
+            @include boxShadowLevel(3);
+        }
+
+        &:active{
+            @include boxShadowLevel(4);
+        }
+
+        &.#{$prefixCls}-Default{
+            @include button-color-default()
+        }
+
+        &.#{$prefixCls}-Primary{
+            @include button-color-primary()
+        }
+
+        &.#{$prefixCls}-Danger{
+            @include button-color-danger();
+        }
+
+        &.#{$prefixCls}-Warning{
+            @include button-color-warning();
+        }
+
+        &.#{$prefixCls}-Info{
+            @include button-color-info();
+        }
+
+        &.#{$prefixCls}-Success{
+            @include button-color-success();
+        }
+
+        &.#{$prefixCls}-Minor{
+            @include button-color-minor();
+        }
+    }
+
+    &-Outline{
+
+        background-color: transparent; 
+
+        &.#{$prefixCls}-Default{
+            @include button-color-default-outline()
+        }
+
+        &.#{$prefixCls}-Primary{
+            @include button-color-primary-outline()
+        }
+
+        &.#{$prefixCls}-Danger{
+            @include button-color-danger-outline()
+        }
+
+        &.#{$prefixCls}-Warning{
+            @include button-color-warning-outline();
+        }
+
+        &.#{$prefixCls}-Info{
+            @include button-color-info-outline();
+        }
+
+        &.#{$prefixCls}-Success{
+            @include button-color-success-outline();
+        }
+
+        &.#{$prefixCls}-Minor{
+            @include button-color-minor-outline();
+        }
+
+        &.#{$prefixCls}-Dashed{
+            border-style:dashed;
+        }
+
+        @media (hover: none) {
+            &:hover{
+                background-color: red;
+            }
+        } 
+    }
+
+    &-Text{
+        &.#{$prefixCls}-Default{
+            @include button-color-default-text()
+        }
+        &.#{$prefixCls}-Primary{
+            @include button-color-primary-text()
+        }
+        &.#{$prefixCls}-Danger{
+            @include button-color-danger-text()
+        }
+        &.#{$prefixCls}-Warning{
+            @include button-color-warning-text()
+        }
+        &.#{$prefixCls}-Info{
+            @include button-color-info-text()
+        }
+        &.#{$prefixCls}-Success{
+            @include button-color-success-text()
+        }
+        &.#{$prefixCls}-Minor{
+            @include button-color-minor-text()
+        }
+    }
+
+    &-Block{
+        width:100%;
+    }
+
+    &-Disabled{
+        opacity: 0.24;
+    }
+
+    &-IsInner{
+        border-radius: 0px;
+    }
+
+}
