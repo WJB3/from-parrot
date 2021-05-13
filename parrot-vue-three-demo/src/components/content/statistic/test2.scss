@@ -1,0 +1,24 @@
+#statistic-site {
+  position: absolute;
+}
+
+#trigger-button-container {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+}.trigger-button {
+  font-family: 'Microsoft Yahei' Arial;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 37px;
+  padding-right: 37px;
+  margin-bottom: 5px;
+  /*border-radius 5px*/
+  border: 1px solid #999;
+}.trigger-button:hover {
+  background: #333;
+  cursor: pointer;
+}

@@ -1,0 +1,143 @@
+#statistc-map-svg {
+  z-index: 301;
+}
+
+#performanceSwitchMenuContainer {
+  z-index: 311;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}.performanceSwitchMenu {
+  font-size: 16px;
+  /*font-weight bold*/
+  color: #ccc;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*background #333*/
+  border: 1px solid #ccc;
+}.performanceSwitchMenu:hover {
+  cursor: pointer;
+  background: #666;
+}.performanceSwitchMenu.actived {
+  background: #666;
+}
+
+#routine-detail {
+  z-index: 611;
+  position: absolute;
+  border-radius: 2px;
+  /*居中*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: #ccc;
+  opacity: 0.95;
+  overflow: auto;
+  visibility: hidden;
+}
+
+#routine-detail-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: #bbb;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  line-height: 20px;
+}
+
+#routine-detail-close:hover {
+  background: brown;
+  color: white;
+  cursor: pointer;
+}
+
+#worst-list {
+  z-index: 303;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  /*padding-left 10px*/
+  background: #333;
+  opacity: 0.5;
+  overflow: auto;
+  visibility: hidden;
+}
+
+#worst-list:hover {
+  /*cursor pointer*/
+}
+
+#list-title {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: aqua;
+}.list-row-name {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#list-row-container {
+  width: 100%;
+}.list-row:nth-child(odd) {
+  background: #444;
+}.list-row {
+  position: relative;
+  color: white;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}.list-row:hover {
+  background: #00cccc;
+  opacity: 0.9;
+}.row-bt {
+  display: inline-block;
+  cursor: pointer;
+  width: 15%;
+  padding-left: 10px;
+}.row-head {
+  display: inline-block;
+  width: 20%;
+}.row-time {
+  display: inline-block;
+  width: 25%;
+}.row-amount {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+}.expressRoutine {
+  stroke: #999;
+  stroke-opacity: 0.2;
+  fill: none;
+}.hightBadRoutine {
+  stroke-width: 3px;
+  stroke: red;
+  stroke-opacity: 0.8;
+  fill: none;
+}.mouseTooltip {
+  position: absolute;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  color: #666;
+  font-size: 12px;
+}

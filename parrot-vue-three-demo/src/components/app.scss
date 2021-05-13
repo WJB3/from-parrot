@@ -1,0 +1,8 @@
+#app {
+  width: 100%;
+  height: 100%;
+  /*background #2A313B*/
+  /*这个是确保子div 100%的时候，保留左边菜单栏空白部分的关键，即子内容右移*/
+  /*margin-left 100px
+    margin-top 50px*/
+}

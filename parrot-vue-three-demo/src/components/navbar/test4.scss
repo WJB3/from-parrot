@@ -1,0 +1,13 @@
+#switcher {
+  font-size: 18px;
+  color: #999;
+  font-family: 'Microsoft Yahei' Simhei Arial;
+  z-index: 1100;
+  position: absolute;
+  /*opacity 0.7*/
+  visibility: hidden;
+  /*居中*/
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
