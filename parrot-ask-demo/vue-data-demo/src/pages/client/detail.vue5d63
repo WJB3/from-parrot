@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"详情","left-arrow":"","right-text":"编辑"},on:{"click-left":function($event){return _vm.go('client')},"click-right":function($event){return _vm.go('client-add',false)}}}),_vm._v(" "),_c('div',{staticClass:"card"},[_c('van-cell-group',[_c('van-field',{attrs:{"label":"客户姓名","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.name),callback:function ($$v) {_vm.$set(_vm.temp, "name", $$v)},expression:"temp.name"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"手机号码","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.phone),callback:function ($$v) {_vm.$set(_vm.temp, "phone", $$v)},expression:"temp.phone"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"填写备注","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.remarks),callback:function ($$v) {_vm.$set(_vm.temp, "remarks", $$v)},expression:"temp.remarks"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"来访时间","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.visit_time),callback:function ($$v) {_vm.$set(_vm.temp, "visit_time", $$v)},expression:"temp.visit_time"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"分类详情","placeholder":"","readonly":"readonly"},model:{value:(_vm.category),callback:function ($$v) {_vm.category=$$v},expression:"category"}})],1)],1),_vm._v(" "),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.del()}}},[_vm._v("删除")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-42275b7c","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/client/detail.vue
+// module id = null
+// module chunks = 

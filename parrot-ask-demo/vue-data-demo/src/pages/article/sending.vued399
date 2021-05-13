@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"发件","leftArrow":true}}),_vm._v(" "),_c('div',[_c('div',{staticStyle:{"margin":"15px auto","width":"90%","color":"#333333"}},[_vm._v("标题")]),_vm._v(" "),_c('div',{staticClass:"card"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.temp.title),expression:"temp.title"}],attrs:{"type":"text","placeholder":"请输入标题"},domProps:{"value":(_vm.temp.title)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.temp, "title", $event.target.value)}}})]),_vm._v(" "),_c('div',{staticStyle:{"margin":"15px auto","width":"90%","color":"#333333"}},[_vm._v("正文")]),_vm._v(" "),_c('div',{staticClass:"card1"},[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.temp.content),expression:"temp.content"}],attrs:{"type":"text","placeholder":"请输入正文","rows":"5","cols":"5"},domProps:{"value":(_vm.temp.content)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.temp, "content", $event.target.value)}}})])]),_vm._v(" "),_c('button',{staticClass:"submit",on:{"click":function($event){return _vm.submit()}}},[_vm._v("提交")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-184e1046","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/article/sending.vue
+// module id = null
+// module chunks = 

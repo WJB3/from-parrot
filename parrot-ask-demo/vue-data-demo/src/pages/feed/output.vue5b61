@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"转出","leftArrow":true}}),_vm._v(" "),_c('van-action-sheet',{attrs:{"close-on-click-overlay":false,"actions":_vm.option1},on:{"select":_vm.onSelect1},model:{value:(_vm.show1),callback:function ($$v) {_vm.show1=$$v},expression:"show1"}}),_vm._v(" "),_c('van-action-sheet',{attrs:{"close-on-click-overlay":false,"actions":_vm.option},on:{"select":_vm.onSelect},model:{value:(_vm.show),callback:function ($$v) {_vm.show=$$v},expression:"show"}}),_vm._v(" "),_c('van-cell',{attrs:{"title":"转账币种","is-link":"","value":_vm.typeName1},on:{"click":function($event){_vm.show1=true}}}),_vm._v(" "),_c('van-field',{attrs:{"label":"对方账号","placeholder":"请输入对方账号"},model:{value:(_vm.target_member),callback:function ($$v) {_vm.target_member=$$v},expression:"target_member"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"转账金额","placeholder":"请输入转账金额"},model:{value:(_vm.money),callback:function ($$v) {_vm.money=$$v},expression:"money"}}),_vm._v(" "),_c('div',{staticClass:"button",on:{"click":function($event){return _vm.submit()}}},[_vm._v("提交")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7492a8da","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/feed/output.vue
+// module id = null
+// module chunks = 

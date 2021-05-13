@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"app-main"},[_c('transition',{attrs:{"name":"fade-transform","mode":"out-in"}},[_c('keep-alive',{attrs:{"max":20,"exclude":_vm.notCacheName}},[_c('router-view',{key:_vm.key})],1)],1)],1)}
+var staticRenderFns = []
+
+export { render, staticRenderFns }

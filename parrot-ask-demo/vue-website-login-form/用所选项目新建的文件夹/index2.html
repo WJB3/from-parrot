@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+</head>
+
+<body>
+    <div id="app" style="position: relative;">
+  
+
+    </div>
+</body>
+<script> 
+    var vm = new Vue({
+        el: '#app',
+        data() { 
+            return {
+
+            }
+        },
+        mounted() {
+            axios({
+                url:`http://8.131.234.186:8200/res/role/page?page=10&size=1`,
+                header:{
+                    'Token':'eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAKtWKi5NUrJSSkzJzcxT0lFKrShQsjKzMDAxMje1NDauBQAvcHTXIAAAAA.Ocj2rm8ZJuReoB5qeBf9zeCSBfCQoYo3fLptde6VWp-523tfDIokrbV946wq9CZWCkPzV1tMLCI97vajldqkGw'
+                }
+            })
+        } 
+    })
+</script>
+
+</html>

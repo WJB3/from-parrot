@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":_vm.is_send?'发件箱':'收件箱',"leftArrow":true}}),_vm._v(" "),_c('div',{staticClass:"card"},[_c('div',{staticClass:"content"},[(!_vm.is_send)?_c('div',[_vm._v("发件人:"+_vm._s(_vm.item.member))]):_vm._e(),_vm._v(" "),_c('div',[_c('span',[_vm._v(_vm._s(_vm.item.create_time))])])]),_vm._v(" "),_c('div',[(!_vm.is_send)?_c('div',{staticClass:"button",on:{"click":function($event){return _vm.go('sending')}}},[_vm._v("回复")]):_vm._e()])]),_vm._v(" "),_c('div',{staticClass:"header"},[_vm._v(_vm._s(_vm.item.title))]),_vm._v(" "),_c('div',{staticClass:"title"},[_vm._v(_vm._s(_vm.item.content))])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-4048573d","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/article/email-detail.vue
+// module id = null
+// module chunks = 

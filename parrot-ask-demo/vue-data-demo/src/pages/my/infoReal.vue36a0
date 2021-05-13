@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"设置","leftArrow":true}}),_vm._v(" "),_c('van-field',{attrs:{"label":"真实姓名","placeholder":"请输入真实姓名"},model:{value:(_vm.temp.name),callback:function ($$v) {_vm.$set(_vm.temp, "name", $$v)},expression:"temp.name"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"身份证号","placeholder":"请输入身份证号"},model:{value:(_vm.temp.card),callback:function ($$v) {_vm.$set(_vm.temp, "card", $$v)},expression:"temp.card"}}),_vm._v(" "),_c('p',{staticClass:"tips"},[_vm._v("*完善信息确认通过后不可修改，请填写真实信息。")]),_vm._v(" "),_c('van-button',{staticClass:"submit",attrs:{"disabled":_vm.disabled},on:{"click":function($event){return _vm.submit()}}},[_vm._v(_vm._s(_vm.audioTip))])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-331b85a2","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/my/infoReal.vue
+// module id = null
+// module chunks = 

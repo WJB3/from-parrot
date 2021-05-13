@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"客户","left-arrow":"","right-text":"添加"},on:{"click-right":function($event){return _vm.go('client-add',true)},"click-left":function($event){return _vm.go('situation')}}}),_vm._v(" "),_c('div',{staticClass:"c_content"},[_c('div',{staticClass:"c_left"},[_c('van-sidebar',{model:{value:(_vm.activeKey),callback:function ($$v) {_vm.activeKey=$$v},expression:"activeKey"}},_vm._l((_vm.arr),function(item,index){return _c('van-sidebar-item',{key:index,attrs:{"title":item.cate_name},on:{"click":function($event){return _vm.onClick(item.id)}}})}),1)],1),_vm._v(" "),_c('div',{staticClass:"c_right"},_vm._l((_vm.arr1),function(item,index){return _c('div',{key:index,staticClass:"card",on:{"click":function($event){return _vm.go('client-detail',item.id)}}},[_c('div',{staticClass:"left"},[_c('div',{staticClass:"header"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('div',{staticClass:"time"},[_vm._v(_vm._s(item.phone))])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',{staticClass:"time"},[_vm._v(_vm._s(item.remarks))])])]),_vm._v(" "),_c('div',{staticClass:"right"},[_vm._v(_vm._s(item.is_show==0?'来访':''))])])}),0)]),_vm._v(" "),_c('van-pagination',{attrs:{"page-count":Math.ceil(_vm.total/10),"mode":"simple"},on:{"change":function($event){return _vm.changePage()}},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}})],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-64227c95","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/client/index.vue
+// module id = null
+// module chunks = 

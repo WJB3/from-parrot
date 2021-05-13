@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"回款单","left-arrow":"","right-text":"添加"},on:{"click-right":function($event){return _vm.go('add-fund')},"click-left":function($event){return _vm.go('situation')}}}),_vm._v(" "),_vm._l((_vm.temp),function(item,index){return _c('div',{key:index,staticClass:"card"},[_c('div',{staticClass:"header"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.customer_name))]),_vm._v(" "),_c('div',{staticClass:"time",class:{ 'class-a': item.status==0, 'class-b': item.status==1,'class-c': item.status==2}},[_vm._v(_vm._s((item.status==0&&'审核中')||(item.status==1&&'审核通过')||(item.status==2&&'拒绝')))])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.customer_phone))]),_vm._v(" "),_c('div',{staticClass:"time"},[_vm._v(_vm._s(item.verify_time))])])])}),_vm._v(" "),_c('van-pagination',{attrs:{"page-count":Math.ceil(_vm.total/9),"mode":"simple"},on:{"change":function($event){return _vm.changePage()}},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}})],2)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-29237ac0","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/back-fund/index.vue
+// module id = null
+// module chunks = 

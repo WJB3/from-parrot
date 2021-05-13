@@ -1,0 +1,8 @@
+module.exports = __webpack_public_path__ + "static/img/fail.42e7141.gif";
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/images/fail.gif
+// module id = 5Bs1
+// module chunks = 56

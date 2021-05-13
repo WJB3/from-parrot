@@ -1,0 +1,2 @@
+// extracted by mini-css-extract-plugin
+module.exports = {"menuText":"#bfcbd9","menuActiveText":"#409EFF","subMenuActiveText":"#f4f4f5","menuBg":"#304156","menuHover":"#263445","menuLightBg":"#fff","menuLightHover":"#f0f1f5","subMenuBg":"#1f2d3d","subMenuHover":"#001528","sideBarWidth":"200px","sidebarTitle":"#fff","sidebarLightTitle":"#001529"};

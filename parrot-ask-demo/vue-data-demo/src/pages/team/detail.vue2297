@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"我的团队","leftArrow":true}}),_vm._v(" "),_c('div',{staticClass:"title"},[_c('div',{on:{"click":function($event){return _vm.change()}}},[_c('p',[_vm._v(_vm._s(_vm.total_direct))]),_vm._v(" "),_c('p',[_vm._v("直推")])]),_vm._v(" "),_c('div',{on:{"click":function($event){return _vm.change1()}}},[_c('p',[_vm._v(_vm._s(_vm.group_person_count))]),_vm._v(" "),_c('p',[_vm._v("团队")])])]),_vm._v(" "),_vm._l((_vm.arr),function(item,index){return _c('div',{key:index,staticClass:"card",on:{"click":function($event){return _vm.go('order-detail',item.id)}}},[_c('div',{staticClass:"content"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.nick_name))]),_vm._v(" "),_c('div',{staticClass:"time",staticStyle:{"color":"#FD5202"}},[_vm._v(_vm._s(item.rank_name))])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.member.replace(/^(\d{3})\d{4}(\d{4})$/, "$1****$2")))]),_vm._v(" "),_c('div',{staticClass:"time"},[_vm._v("团队人数："+_vm._s(item.group_person_count))])])])})],2)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-4597fe40","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/team/detail.vue
+// module id = null
+// module chunks = 

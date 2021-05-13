@@ -1,0 +1,24 @@
+{
+    "name": "demo",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "@antv/l7": "^2.3.9",
+        "@antv/l7-maps": "^2.3.9",
+        "core-js": "^3.6.5",
+        "echarts": "4.2.1",
+        "echarts-liquidfill": "^2.0.6",
+        "vue": "^2.6.11"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "node-sass": "^4.12.0",
+        "sass-loader": "^7.0.1",
+        "vue-template-compiler": "^2.6.11"
+    }
+}

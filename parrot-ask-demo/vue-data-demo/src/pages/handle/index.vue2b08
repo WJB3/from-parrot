@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"未拨打","left-arrow":""},on:{"click-left":function($event){return _vm.go('order-add')}}}),_vm._v(" "),_vm._m(0),_vm._v(" "),_vm._m(1),_vm._v(" "),_c('button',{staticClass:"button"},[_vm._v("登录")])],1)}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"banner"},[_c('div',{staticClass:"content"},[_c('div',[_vm._v("666")]),_vm._v(" "),_c('div',[_vm._v("未播打")])]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',[_vm._v("666")]),_vm._v(" "),_c('div',[_vm._v("未播打")])]),_vm._v(" "),_c('div',{staticClass:"content",staticStyle:{"border":"none"}},[_c('div',[_vm._v("666")]),_vm._v(" "),_c('div',[_vm._v("未播打")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"swiper-container"},[_c('div',{staticClass:"swiper-wrapper"},[_c('div',{staticClass:"swiper-slide"},[_vm._v("Slide 1")]),_vm._v(" "),_c('div',{staticClass:"swiper-slide"},[_vm._v("Slide 2")]),_vm._v(" "),_c('div',{staticClass:"swiper-slide"},[_vm._v("Slide 3")])])])}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-08c5b962","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/handle/index.vue
+// module id = null
+// module chunks = 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Antd</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.15.2/antd.min.css">
+  </link>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.15.2/antd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class App extends React.Component {
+      state = {
+        date: null,
+      };
+      handleChange = date => {
+        antd.message.info(`您选择的日期是: ${date ? date.format('YYYY-MM-DD') : '未选择'}`);
+        this.setState({ date });
+      };
+      render() {
+        const { date } = this.state;
+        return (
+          <antd.ConfigProvider>
+            <div style={{ width: 400, margin: '100px auto' }}>
+              <antd.DatePicker onChange={this.handleChange} />
+              <div style={{ marginTop: 20 }}>
+                当前日期：{date ? date.format('YYYY-MM-DD') : '未选择'}
+              </div>
+            </div>
+          </antd.ConfigProvider>
+        );
+      }
+    }
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>

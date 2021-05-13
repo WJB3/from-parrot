@@ -1,0 +1,376 @@
+@import "~antd/dist/antd.less";
+
+.App {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  min-width: 1366px;
+}
+
+.bg_transparent {
+  background: transparent;
+}
+// 页面tab的自定义样式
+.page_tab {
+  .ant-radio-button-wrapper {
+    background: #edeff2;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+  }
+  .ant-radio-button-wrapper:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+  .ant-radio-button-wrapper:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right-width: 0;
+  }
+  .ant-radio-button-wrapper::before {
+    display: none;
+  }
+}
+
+// 页面搜索框自定义样式
+.search_form {
+  .ant-form-item {
+    margin-bottom: 1em;
+    margin-right: 20px;
+    .ant-form-item-control {
+      width: 160px;
+    }
+  }
+  .search_form_items {
+    flex: 1;
+    margin-right: 30px;
+    flex-wrap: wrap;
+  }
+}
+
+// 自定义step 组件样式
+.gt_steps {
+  .gt_step_index {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background: @primary-color;
+    color: #fff;
+    margin-right: 10px;
+  }
+  .gt_step_content {
+    flex-shrink: 0;
+    flex: 1;
+    .gt_step_desc {
+      color: #616266;
+      font-size: 13px;
+    }
+  }
+}
+
+// 自定义表单外表
+.form_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .form_list_content {
+    background-color: #ffffff;
+    border: 1px solid #c6c8cc;
+    width: 1000px;
+    // height: 960px;
+  }
+
+  .form_editList_content {
+    background-color: #ffffff;
+    border: 1px solid #c6c8cc;
+    width: 1000px;
+    // height: 1280px;
+  }
+}
+
+// 抽屉弹窗
+.csdrawer_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .form_drawer_detail {
+    background-color: #ffffff;
+    border: 1px solid #c6c8cc;
+    width: 700px;
+    // height: 960px;
+  }
+}
+
+.upload_Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: "#84878C";
+  width: 141px;
+  height: 141px;
+  font-size: 24px;
+}
+
+.upload_Image_teacher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: "#ffffff";
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+}
+
+.upload_Image_feedback {
+  width: 150px;
+  height: 150px;
+  .ant-upload-list-picture-card .ant-upload-list-item {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.preview_Image_collection {
+  .ant-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// overwrite
+
+.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  color: @primary-color;
+}
+
+.table_no_hover {
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: transparent;
+  }
+}
+
+.tabs_no_line {
+  &.ant-tabs-top > .ant-tabs-nav::before,
+  &.ant-tabs-bottom > .ant-tabs-nav::before,
+  &.ant-tabs-top > div > .ant-tabs-nav::before,
+  &.ant-tabs-bottom > div > .ant-tabs-nav::before {
+    border-bottom: none;
+  }
+}
+
+.tabs_line_width {
+  .ant-tabs-ink-bar {
+    background: transparent;
+  }
+  .ant-tabs-ink-bar::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #5781f2;
+    border-radius: 3;
+  }
+}
+
+.calendar-event {
+  cursor: pointer;
+  word-break: break-all;
+  .calendar-event-button {
+    display: none;
+    float: right;
+  }
+}
+
+.calendar-event:hover {
+  background-color: rgb(237, 237, 252);
+  .calendar-event-button {
+    display: inline-flex;
+  }
+}
+
+.calendar_section {
+  .calendar_section_button {
+    display: none;
+  }
+}
+.calendar_section:hover .calendar_section_button {
+  display: flex;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 21px solid transparent;
+  border-left: 25px solid #5781f2;
+  border-bottom: 21px solid transparent;
+}
+
+// 打印表格自定义样式
+.print_table {
+  .ant-table-thead > tr > th {
+    background-color: #e4e7f0;
+  }
+  .ant-table.ant-table-bordered > .ant-table-container {
+    border: 1px solid #959699;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-content
+    > table
+    > thead
+    > tr:not(:last-child)
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-header
+    > table
+    > thead
+    > tr:not(:last-child)
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-body
+    > table
+    > thead
+    > tr:not(:last-child)
+    > th {
+    border-bottom: 1px solid #959699;
+  }
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-content
+    > table
+    > thead
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-header
+    > table
+    > thead
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-body
+    > table
+    > thead
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-content
+    > table
+    > tbody
+    > tr
+    > td,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-header
+    > table
+    > tbody
+    > tr
+    > td,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-body
+    > table
+    > tbody
+    > tr
+    > td,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-content
+    > table
+    > tfoot
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-header
+    > table
+    > tfoot
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-body
+    > table
+    > tfoot
+    > tr
+    > th,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-content
+    > table
+    > tfoot
+    > tr
+    > td,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-header
+    > table
+    > tfoot
+    > tr
+    > td,
+  .ant-table.ant-table-bordered
+    > .ant-table-container
+    > .ant-table-body
+    > table
+    > tfoot
+    > tr
+    > td {
+    border-bottom: 1px solid #959699;
+    border-right: 1px solid #959699;
+  }
+}
+// 不显示年的年月日选择器
+.hideYearDatePicker {
+  .ant-picker-header-super-prev-btn,
+  .ant-picker-header-super-next-btn,
+  .ant-picker-year-btn {
+    display: none;
+  }
+}
+
+// disabled
+.ant-input[disabled] {
+  color: #333;
+}
+
+.ant-select-disabled.ant-select-single:not(.ant-select-customize-input)
+  .ant-select-selector {
+  color: #333;
+}
+
+.ant-picker-input > input[disabled] {
+  color: #333;
+}
+
+.ant-checkbox-disabled + span {
+  color: #333;
+}
+
+.ant-upload-list,
+.ant-upload-list-picture-card {
+  //float: left;
+  display: inline;
+}
+
+.selectMember_search_item {
+  .ant-tree-indent {
+    display: none;
+  }
+}

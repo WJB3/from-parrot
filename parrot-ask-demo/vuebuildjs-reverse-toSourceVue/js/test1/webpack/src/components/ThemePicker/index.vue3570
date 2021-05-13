@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-color-picker',{staticClass:"theme-picker",attrs:{"predefine":['#409EFF', '#1890ff', '#304156','#212121','#11a983', '#13c2c2', '#6959CD', '#f5222d' ],"popper-class":"theme-picker-dropdown"},model:{value:(_vm.theme),callback:function ($$v) {_vm.theme=$$v},expression:"theme"}})}
+var staticRenderFns = []
+
+export { render, staticRenderFns }

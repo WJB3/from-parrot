@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"兑换列表","leftArrow":true,"rightText":"兑换记录","goUrl":"exchangeRecord"}}),_vm._v(" "),_c('ul',{staticClass:"goods-list"},_vm._l((_vm.arr),function(item,index){return _c('li',{key:index},[_c('div',{staticClass:"pet-img"},[_c('img',{staticClass:"image",attrs:{"src":item.image}})]),_vm._v(" "),_c('div',{staticClass:"content-chunk"},[_c('div',{staticClass:"top"},[_c('span',[_vm._v(_vm._s(item.name))])]),_vm._v(" "),_c('div',[_vm._v("价值："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.start_price)+"-"+_vm._s(item.end_price))])]),_vm._v(" "),_c('div',[_vm._v("购买时间："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.start_time.split(':')[0])+":"+_vm._s(item.start_time.split(':')[1])+"-"+_vm._s(item.end_time.split(':')[0])+":"+_vm._s(item.end_time.split(':')[1]))])]),_vm._v(" "),_c('div',[_vm._v("预约/即抢羽毛："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.appoint)+"/"+_vm._s(item.purchase))])]),_vm._v(" "),_c('div',[_vm._v("智能合约收益："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.day)+"天/"+_vm._s((item.day*item.bonus_rate*100).toFixed(0))+"%")])]),_vm._v(" "),_c('div',[_vm._v("可挖HKT："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.coin_hkt)+"枚")])]),_vm._v(" "),_c('div',[_vm._v("可挖PHD："),_c('span',{staticClass:"rightEl"},[_vm._v(_vm._s(item.coin_phd)+"枚")])])]),_vm._v(" "),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.exchange(item)}}},[_vm._v("兑换")])])}),0)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-160f6be2","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/exchange/index.vue
+// module id = null
+// module chunks = 

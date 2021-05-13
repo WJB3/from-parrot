@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"系统消息","leftArrow":true}}),_vm._v(" "),_c('div',{staticClass:"card"},[_c('div',{staticClass:"header"},[_vm._v(_vm._s(_vm.item.title))]),_vm._v(" "),_c('div',{staticClass:"content"},[_vm._v(_vm._s(_vm.item.content))]),_vm._v(" "),_c('div',{staticClass:"bottom",staticStyle:{"margin-left":"210px"}},[_vm._v(_vm._s(_vm.item.create_time))])])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-365e628f","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/article/detail.vue
+// module id = null
+// module chunks = 

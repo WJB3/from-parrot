@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"设置","leftArrow":true}}),_vm._v(" "),_c('div',{staticClass:"img"},[_c('van-uploader',{attrs:{"after-read":_vm.afterRead}},[(_vm.temp.head_image)?_c('img',{attrs:{"src":_vm.temp.head_image}}):_c('img',{attrs:{"src":require("../../assets/images/default.png")}}),_vm._v(" "),_c('span',{staticStyle:{"margin-left":"20px"}},[_vm._v("点击更换头像")])])],1),_vm._v(" "),_c('van-field',{attrs:{"label":"推荐人账号","placeholder":"请输入推荐人账号","readonly":""},model:{value:(_vm.temp.parent_member),callback:function ($$v) {_vm.$set(_vm.temp, "parent_member", $$v)},expression:"temp.parent_member"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"推荐人昵称","placeholder":"请输入推荐人昵称","readonly":""},model:{value:(_vm.temp.parent_nick_name),callback:function ($$v) {_vm.$set(_vm.temp, "parent_nick_name", $$v)},expression:"temp.parent_nick_name"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"昵称","placeholder":"请输入昵称"},model:{value:(_vm.temp.nick_name),callback:function ($$v) {_vm.$set(_vm.temp, "nick_name", $$v)},expression:"temp.nick_name"}}),_vm._v(" "),_c('button',{staticClass:"submit",on:{"click":function($event){return _vm.submit()}}},[_vm._v("确定")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-d317ee68","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/my/info.vue
+// module id = null
+// module chunks = 

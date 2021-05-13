@@ -1,0 +1,8 @@
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAuCAMAAABDPIrQAAAAM1BMVEVHcEzaZgTbZwPcZwTbZgPbYwDcYwDbZgPcZwPbZwTbZgPTXgDbZwPcZgPfZADbZwTbZwT4o83iAAAAEHRSTlMAPN3M5Ssc8rD5eQpNlRPI1MaEcgAAAPJJREFUSMftlstuxCAMRR0w2Dyc+P+/tpCmM1TqYuwsuskR2yMLBNwLAJAqm6kJTjpjsULI/XRDUSU0QaolDDvFoXLtm4XKQ48JhJRqbmCi5To0gahFMpjJUjQCaUjgIAUloMK7R965DJlq88itkl+GS84uTlkxusB5YOrmkR0yBRc0ZZLkQuif7vYjP/Jfn+37am6p2eQsiOM94Fwou03uuDzGbps8EuItc7bteVsGY7cd2C7L4CPb5HXwaRjkXzuegy/5o4jNHI+LePT2itiPwr2tEdde4X6rVtwqNJ4q1X+q1K0SN+sj2esjfdfHG8X1C91lNDZCaatIAAAAAElFTkSuQmCC"
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/assets/images/me/proceeds.png
+// module id = qc4T
+// module chunks = 1

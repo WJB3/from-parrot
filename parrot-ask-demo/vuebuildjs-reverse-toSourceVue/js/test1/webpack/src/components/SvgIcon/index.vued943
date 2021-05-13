@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isExternal)?_c('div',_vm._g({staticClass:"svg-external-icon svg-icon",style:(_vm.styleExternalIcon)},_vm.$listeners)):_c('svg',_vm._g({class:_vm.svgClass,attrs:{"aria-hidden":"true"}},_vm.$listeners),[_c('use',{attrs:{"xlink:href":_vm.iconName}})])}
+var staticRenderFns = []
+
+export { render, staticRenderFns }

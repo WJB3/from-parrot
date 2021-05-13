@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"设置","leftArrow":true}}),_vm._v(" "),_c('van-cell',{attrs:{"title":"个人信息","is-link":"","to":"info"}}),_vm._v(" "),_c('van-cell',{directives:[{name:"show",rawName:"v-show",value:(false),expression:"false"}],attrs:{"title":"修改二级密码","is-link":"","to":"index"}}),_vm._v(" "),_c('button',{staticClass:"submit",on:{"click":function($event){return _vm.log()}}},[_vm._v("安全退出")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-274a6df9","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/my/setting.vue
+// module id = null
+// module chunks = 

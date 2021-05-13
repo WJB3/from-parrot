@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"转让记录","leftArrow":true},on:{"click":function($event){return _vm.goMy()}}}),_vm._v(" "),_c('van-tabs',{attrs:{"background":"#FFEEE7"},on:{"change":_vm.change},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},_vm._l((_vm.arr1),function(item,index1){return _c('van-tab',{key:index1,attrs:{"title":item}},[_c('van-list',{attrs:{"finished":_vm.finished,"finished-text":"没有更多了"},on:{"load":_vm.onLoad},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},_vm._l((_vm.arr),function(item,index){return _c('div',{key:index,staticClass:"card",on:{"click":function($event){return _vm.go('adopt-detail',item,index1)}}},[_c('div',[_c('img',{staticClass:"image",attrs:{"src":item.image}})]),_vm._v(" "),_c('div',{staticClass:"right"},[_c('div',{staticClass:"top"},[_c('span',{staticStyle:{"color":"#FBA318"}},[_vm._v(_vm._s(item.name))])]),_vm._v(" "),_c('div',[_vm._v("价值："+_vm._s(item.price))]),_vm._v(" "),_c('div',[_vm._v("交易时间："+_vm._s(_vm.id==0?item.intime:item.addtime))]),_vm._v(" "),_c('div',[_vm._v("预约/即抢购买消耗羽毛："+_vm._s(item.appoint)+"/"+_vm._s(item.purchase))]),_vm._v(" "),_c('div',[_vm._v("智能合约收益："+_vm._s(item.day)+"天/"+_vm._s((item.day*item.bonus_rate*100).toFixed(0))+"%")]),_vm._v(" "),_c('div',[_vm._v("可挖HKT："+_vm._s(item.coin_hkt))]),_vm._v(" "),(index1==1)?_c('div',{staticClass:"button"},[_vm._v(_vm._s(item.status?'待确认':'待付款'))]):_vm._e()])])}),0)],1)}),1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-fae691de","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/adopt/tranform.vue
+// module id = null
+// module chunks = 

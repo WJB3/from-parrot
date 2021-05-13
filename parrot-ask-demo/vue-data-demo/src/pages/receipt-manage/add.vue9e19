@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('Tabbar',{attrs:{"title":"添加银行卡","leftArrow":true}}),_vm._v(" "),_c('div',[_c('van-cell-group',[_c('van-field',{staticStyle:{"width":"95%"},attrs:{"label":"开户银行","placeholder":"请输入开户银行"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}}),_vm._v(" "),_c('van-field',{staticStyle:{"width":"95%"},attrs:{"label":"开户支行","placeholder":"请输入开户支行"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}}),_vm._v(" "),_c('van-field',{staticStyle:{"width":"95%"},attrs:{"label":"开户姓名","placeholder":"请输入开户姓名"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}}),_vm._v(" "),_c('van-field',{staticStyle:{"width":"95%"},attrs:{"label":"银行卡号","placeholder":"请输入银行卡号"},model:{value:(_vm.username),callback:function ($$v) {_vm.username=$$v},expression:"username"}})],1)],1),_vm._v(" "),_c('div',{staticClass:"button"},[_vm._v("确定")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-74828243","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/receipt-manage/add.vue
+// module id = null
+// module chunks = 

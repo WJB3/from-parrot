@@ -1,0 +1,4 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-dropdown',{attrs:{"trigger":"click"},on:{"command":_vm.handleSetSize}},[_c('div',[_c('svg-icon',{attrs:{"class-name":"size-icon","icon-class":"size"}})],1),_c('el-dropdown-menu',{attrs:{"slot":"dropdown"},slot:"dropdown"},_vm._l((_vm.sizeOptions),function(item){return _c('el-dropdown-item',{key:item.value,attrs:{"disabled":_vm.size===item.value,"command":item.value}},[_vm._v(" "+_vm._s(item.label)+" ")])}),1)],1)}
+var staticRenderFns = []
+
+export { render, staticRenderFns }

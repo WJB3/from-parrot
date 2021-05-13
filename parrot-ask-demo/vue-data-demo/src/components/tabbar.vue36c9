@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('van-sticky',[_c('van-nav-bar',{attrs:{"title":_vm.title,"left-arrow":_vm.leftArrow,"right-text":_vm.rightText},on:{"click-left":function($event){return _vm.goback()},"click-right":function($event){return _vm.go(_vm.goUrl)}}})],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-e2869656","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/components/tabbar.vue
+// module id = null
+// module chunks = 

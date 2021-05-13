@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"详情","left-arrow":"","right-text":"编辑"},on:{"click-left":function($event){return _vm.go('review')},"click-right":function($event){return _vm.go('reviewedit')}}}),_vm._v(" "),_c('div',{staticClass:"card"},[_c('van-cell-group',[_c('van-field',{attrs:{"label":"手机号码","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.phone),callback:function ($$v) {_vm.$set(_vm.temp, "phone", $$v)},expression:"temp.phone"}}),_vm._v(" "),_c('van-field',{attrs:{"label":"备注","placeholder":"","readonly":"readonly"},model:{value:(_vm.temp.deal_remarks),callback:function ($$v) {_vm.$set(_vm.temp, "deal_remarks", $$v)},expression:"temp.deal_remarks"}})],1)],1),_vm._v(" "),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.del()}}},[_vm._v("删除")])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-57151dd4","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/review/detail.vue
+// module id = null
+// module chunks = 

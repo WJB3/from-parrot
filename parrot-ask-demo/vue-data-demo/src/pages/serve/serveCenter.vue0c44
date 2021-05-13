@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"服务中心"}}),_vm._v(" "),_c('van-cell-group',[_c('div',{staticClass:"cell"},[_c('van-cell',{attrs:{"to":{name:'email',query:{id:0}},"title":"收件箱","is-link":""}})],1),_vm._v(" "),_c('div',{staticClass:"cell"},[_c('van-cell',{attrs:{"is-link":"","to":{name:'email',query:{id:1}},"title":"发件箱"}})],1),_vm._v(" "),_c('div',{staticClass:"cell"},[_c('van-cell',{attrs:{"to":"article","title":"系统公告","is-link":""}})],1)])],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-9ee6c44a","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/serve/serveCenter.vue
+// module id = null
+// module chunks = 

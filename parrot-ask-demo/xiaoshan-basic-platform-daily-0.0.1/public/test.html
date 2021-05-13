@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="test()">test</button>
+    <script>
+      function test() {
+        console.log('发送消息开启弹窗');
+        window.parent.postMessage({ type: 'selectMemberModal:init' }, '*');
+      }
+      window.addEventListener(
+        'message',
+        (event) => {
+          console.log(event, '接受弹窗数据');
+        },
+        false,
+      );
+    </script>
+  </body>
+</html>

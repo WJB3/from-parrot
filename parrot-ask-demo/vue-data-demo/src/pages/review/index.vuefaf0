@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"回访计划","left-arrow":""},on:{"click-left":function($event){return _vm.go('home')}}}),_vm._v(" "),_vm._l((_vm.temp),function(item,index){return _c('div',{key:index,staticClass:"card",on:{"click":function($event){return _vm.go('reviewdetail',item.id)}}},[_c('div',[_c('div',{staticClass:"header"},[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',{staticClass:"phone"},[_vm._v(_vm._s(item.phone))]),_vm._v(" "),_c('div',{staticClass:"time van-ellipsis"},[_vm._v(_vm._s(item.deal_remarks))])])]),_vm._v(" "),(item.is_customer==0)?_c('div',{staticClass:"right",on:{"click":function($event){$event.stopPropagation();return _vm.tran(item.id)}}},[_vm._v(_vm._s(item.is_customer==0?'转入客户':'删除'))]):_vm._e()])}),_vm._v(" "),_c('van-pagination',{attrs:{"page-count":Math.ceil(_vm.total/10),"mode":"simple"},on:{"change":function($event){return _vm.changePage()}},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}})],2)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-490434b5","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/review/index.vue
+// module id = null
+// module chunks = 

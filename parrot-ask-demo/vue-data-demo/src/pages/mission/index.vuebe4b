@@ -1,0 +1,11 @@
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('van-nav-bar',{attrs:{"title":"领取任务","left-arrow":""},on:{"click-left":function($event){return _vm.go('home')}}}),_vm._v(" "),_vm._l((_vm.temp),function(item,index){return _c('div',{key:index,staticClass:"card"},[_vm._m(0,true),_vm._v(" "),_c('div',{staticStyle:{"margin-left":"20px"}},[_vm._v(_vm._s(item.group_name))]),_vm._v(" "),_c('button',{staticClass:"button",staticStyle:{"margin-left":"140px"},on:{"click":function($event){return _vm.del(item.id)}}},[_vm._v("领取任务")])])}),_vm._v(" "),_c('van-pagination',{attrs:{"page-count":Math.ceil(_vm.total/5),"mode":"simple"},on:{"change":function($event){return _vm.changePage()}},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}})],2)}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"margin-left":"20px"}},[_c('img',{attrs:{"src":require("@/assets/images/handle/2.png")}})])}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+export default esExports
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-6cd35eea","hasScoped":true,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/mission/index.vue
+// module id = null
+// module chunks = 
